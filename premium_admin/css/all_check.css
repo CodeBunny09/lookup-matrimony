@@ -1,0 +1,47 @@
+
+
+input#checkAll{
+background: linear-gradient(to bottom, #59d0f8 5%, #49c0e8 100%);
+border: 1px solid #0c799e;
+padding: 4px 5px;
+font-size: 13px;
+color: white;
+margin-left: 20px;
+margin-top: -4px;
+border-radius:5px;
+cursor:pointer;
+}
+
+input#checkAll:hover{
+ background: linear-gradient(to bottom, #49c0e8 5%, #59d0f8 100%);
+}
+
+
+
+/* -------------------------------------
+    CSS for Checkbox (Check/Uncheck) with Checkbox
+---------------------------------------- */
+
+input[type=checkbox].second {
+display:none;
+}
+/*--------------------------------------------------------------------------------
+Creating Checkbox and label as a Single unit(for Cross browser compatibility)
+----------------------------------------------------------------------------------*/
+input[type=checkbox].second + label.label2 {
+padding-left:42px;
+display:inline-block;
+line-height:30px;
+background-repeat:no-repeat;
+cursor:pointer;
+margin-left: 1px;
+margin-right: 1px;
+}
+
+input[type=checkbox].second:checked + label.label2 {
+background-position: 0 -30px;
+}
+
+label.label2{
+background-image:url('../../img/check1.png');
+}

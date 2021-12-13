@@ -1,0 +1,43 @@
+AddDefaultCharset UTF-8
+
+#RewriteEngine on
+#RewriteRule ^api/login\.php$ - [L]
+
+
+RewriteRule ^(api)($|/) - [L]
+RewriteRule ^(my_photos)($|/) - [L]
+RewriteRule ^(my_photos_big)($|/) - [L]
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /(.+?)\.php[\s?] [NC]
+RewriteRule ^ %1 [R=301,L,NE]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)/([a-zA-Z0-9_-]+)$ memprofile.php?PMid=$1&unm=$2
+
+RewriteRule ^id-([a-zA-Z0-9.+]+)$ wedding-planner.php?id=$1
+RewriteRule ^amount-([a-zA-Z0-9.+]+)$ make_payment.php?amount=$1
+
+
+
+#RewriteRule ^([a-zA-Z0-9-]+)$ cms.php?cms_page=$1  [L] 
+</IfModule>
+
+RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -l [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^.*$ - [NC,L]
+    RewriteRule ^(data/|js/|styles/|install/|favicon\.ico|crossdomain\.xml|robots\.txt) - [NC,L]
+    RewriteRule ^.*$ index.php [NC,L]
+	
+	
+	
+
+	IndexIgnore * 

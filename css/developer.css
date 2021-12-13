@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+
+.gt-cursor{
+	cursor:pointer;	
+}
+.validetta-bubble, .error {
+    color: #e14d50;
+}
+.img-developer-larg{
+	height:320px !important;
+	width:100%;	
+}
+#my_file,#my_file1{
+	display:none;	
+}
+.img-responsive.imgheight{
+	height: auto;
+    width: 100%;
+}
